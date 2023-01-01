@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+
+nav {
+    display: flex;
+    background-color: rgb(32, 32, 41);
+    justify-content: space-evenly;
+    color: rgb(230, 230, 230);
+    height: 70px;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 35%;
+    justify-content: space-between;
+}
+
+
+nav ul li a {
+    color: rgb(230, 230, 230);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+nav ul li a:hover {
+    background-color: rgb(41, 41, 51);
+    border-radius: 7px;
+}
+
+.switch-btn span {
+    padding: 6px;
+    background-color: rgb(41, 41, 51);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 16px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 22px;
+    opacity: 0;
+    left: -9px;
+    top: -3px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;     
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;     
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, 0px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    transform: scale(0);
+}
+
+
+/* Content */
+.content {
+    display: flex;
+    max-width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: rgb(24, 25, 32);
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    z-index: -3;
+}
+
+.content .desc {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    margin-right: 170px;
+    position: relative;
+    top: -50px;
+    color: white;
+}
+
+.content p:nth-child(2) {
+    background-image: linear-gradient(to bottom right, #4263eb, #f03e3e);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: bold;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    margin-top: -2px;
+}
+
+.content p:nth-child(3) {
+    margin-top: 15px;
+}
+
+.content h1 {
+    font-size: 40pt;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 600;
+}
+
+.content img {
+    width: 200px;
+    height: 270px;
+    position: relative;
+    top: -50px;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    background-color: rgb(24, 25, 32);
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer h4 {
+    color: white;
+    font-size: 10pt;
+    font-weight: 100;
+}
+
+/* Responsive */
+@media screen and ( max-width: 781px ) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    nav ul {
+        position: absolute;
+        flex-direction: column;
+        background-color: rgb(24, 26, 34);
+        top: 50px;
+        width: 100%;
+        height: 500px;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 1;
+        transform: translateY(-140%);
+        padding-bottom: 100px;
+
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul.slide {
+        transform: translateY(20px) translateX(-20px);
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(41, 41, 51, 0);
+        border-radius: 7px;
+    }
+
+    .content {
+        background-color: rgb(24, 25, 32);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .content .desc {
+        padding-top: 30px;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        order: 2;
+        margin: 0;
+    }
+
+    .footer h4 {
+        display: flex;
+        max-width: 400px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+}
